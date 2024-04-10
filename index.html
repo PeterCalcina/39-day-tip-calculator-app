@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Frontend Club">
+    <meta name="description" content="Descripcion del proyecto">
+    <!-- Biblioteca de íconos Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Archivo reset Normalize -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Archivo de estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+    <title>Tip Calculator App</title>
+</head>
+
+<body>
+
+    <div class="logo">
+        <img src="images/logo.svg" alt="Logo">
+    </div>
+
+    <main class="bill__calculator">
+        <div class="form__bill">
+            <div class="input__group">
+                <label for="bill">Bill</label>
+                <img src="images/icon-dollar.svg" alt="Icon dollar">
+                <input type="number" id="bill" placeholder="0" onkeyup="verifyPeople(0)">
+            </div>
+
+            <div class="group__tip">
+                <label>Select Tip %</label>
+
+                <div class="tips">
+                    <div class="radio_tip">
+                        <input type="radio" id="tip_5" name="tip" value="5" onclick="verifyPeople(1)">
+                        <label for="tip_5">5%</label>
+                    </div>
+
+                    <div class="radio_tip">
+                        <input type="radio" id="tip_10" name="tip" value="10" onclick="verifyPeople(1)">
+                        <label for="tip_10">10%</label>
+                    </div>
+
+                    <div class="radio_tip">
+                        <input type="radio" id="tip_15" name="tip" value="15" onclick="verifyPeople(1)">
+                        <label for="tip_15">15%</label>
+                    </div>
+
+                    <div class="radio_tip">
+                        <input type="radio" id="tip_25" name="tip" value="25" onclick="verifyPeople(1)">
+                        <label for="tip_25">25%</label>
+                    </div>
+
+                    <div class="radio_tip">
+                        <input type="radio" id="tip_50" name="tip" value="50" onclick="verifyPeople(1)">
+                        <label for="tip_50">50%</label>
+                    </div>
+
+                    <input class="tip_custom" type="number" id="custom" placeholder="Custom" onkeyup="deselectRadio()">
+                </div>
+            </div>
+
+            <div class="input__group">
+                <label>Number of People</label>
+                <img src="images/icon-person.svg" alt="Icon person">
+                <input type="number" id="people" placeholder="0" onkeyup="calculateBill()">
+                <span class="error__msg">Can't be zero</span>
+            </div>
+        </div>
+
+        <div class="bill__result">
+            <div class="group__tip_amount">
+                <p class="title">
+                    Tip Amount
+                    <span>/ person</span>
+                </p>
+
+                <span class="total" id="tip_total"> $0.00 </span>
+            </div>
+
+            <div class="group__total">
+                <p class="title">
+                    Total
+                    <span>/ person</span>
+                </p>
+
+                <span class="total" id="total"> $0.00 </span>
+            </div>
+
+            <button class="reset__btn" id="reset" onclick="clearAll()">Reset</button>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
